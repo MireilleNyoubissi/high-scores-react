@@ -1,23 +1,13 @@
-import logo from './logo.svg';
+import React from "react";
+import Table from "./Table.js";
+import allCountryScores from "./scores.js";
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="table-container">  
+        <h1>High Scores per Country</h1>            
+        <Table data={allCountryScores.sort((a, b) => a.name.localeCompare(b.name))} />
     </div>
   );
 }
